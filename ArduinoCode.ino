@@ -1,4 +1,4 @@
-ฤฤ#include <hd44780.h> // Use the hd44780 library compatible with Renesas Uno
+#include <hd44780.h> // Use the hd44780 library compatible with Renesas Uno
 #include <Wire.h>
 #include <hd44780ioClass/hd44780_I2Cexp.h> // I2C display class
 hd44780_I2Cexp lcd;
