@@ -6,19 +6,19 @@
   font-family: "FlappyBirdy";
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/FlappyBirdy.ttf") format("truetype");
+  src: url("fonts/FlappyBirdy.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "AMD";
     font-style: normal;
     font-weight: 400;
-    src: url("/fonts/2005_iannnnnAMD.ttf") format('truetype');
+    src: url("fonts/2005_iannnnnAMD.ttf") format('truetype');
 }
 
 @font-face {
     font-family: "OSD";
     font-style: normal;
     font-weight: 400;
-    src: url("/fonts/VCR_OSD_MONO_1.001.ttf") format('truetype');
+    src: url("fonts/VCR_OSD_MONO_1.001.ttf") format('truetype');
 }
