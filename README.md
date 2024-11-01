@@ -5,16 +5,11 @@
 Project นี้เป็นการบูรณาการในการใช้งาน Microcontroller ในรายวิชา PHYSICAL COMPUTING โดยเป็นการทำเป็นเกมที่สนุกและโต้ตอบได้ โดยผู้เล่นจะควบคุมไก่เพื่อให้บินผ่านสิ่งกีดขวางที่ปรากฏบนหน้าจอที่เลื่อนอย่างต่อเนื่อง โดยเกมนี้ได้รับแรงบันดาลใจจากเกม Flappy Bird และมีความพิเศษที่ใช้ตัวละครเป็นไก่แทน นอกจากนี้ เกมนี้สร้างขึ้นทั้งหมดโดยใช้อุปกรณ์ฮาร์ดแวร์ของ Arduino ผู้เล่นจะต้องกะจังหวะการเคลื่อนไหวให้แม่นยำเพื่อหลีกเลี่ยงการชนกับสิ่งกีดขวางและทำคะแนนสูงสุด โดยจะมีอุปกรณ์ที่ใช้งานใน Project ดังกล่าวทั้งหมดดังนี้
 
 # อุปกรณ์ที่ใช้งาน
-<img src="Pics/Arduino.jpg" alt="Arduino UNO R4" width="500"/>
-<img src="Pics/LCD-Display-with-I2C-Module.jpg" alt="LCD" width="500"/>
-<img src="Pics/Button.jpg" alt="Button" width="500"/>
-<img src="Pics/JumperWires.jpg" alt="Jumper Wires" width="500"/>
-<img src="Pics/Breadboard.jpg" alt="Breadboard" width="500"/>
-![Arduino UNO R4](Pics/Arduino.jpg)
-![LCD](Pics/LCD-Display-with-I2C-Module.jpg)
-![Button](Pics/Button.jpg)
-![Jumper Wires](Pics/JumperWires.jpg)
-![Breadboard](Pics/Breadboard.jpg)
+<img src="Pics/Arduino.jpg" alt="Arduino UNO R4" width="300"/>
+<img src="Pics/LCD-Display-with-I2C-Module.jpg" alt="LCD" width="300"/>
+<img src="Pics/Button.jpg" alt="Button" width="300"/>
+<img src="Pics/JumperWires.jpg" alt="Jumper Wires" width="300"/>
+<img src="Pics/Breadboard.jpg" alt="Breadboard" width="300"/>
 
 # ฟังก์ชันหลัก
 * ระบบควบคุมการกระโดดของไก่และการเคลื่อนที่ของท่อ โดยไก่จะกระโดดเมื่อกดปุ่ม และถูกแรงโน้มถ่วงดึงลงเมื่อไม่ได้กดปุ่ม
