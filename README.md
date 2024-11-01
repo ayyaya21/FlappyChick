@@ -7,12 +7,16 @@ Project นี้เป็นการบูรณาการในการใ
 # อุปกรณ์ที่ใช้งาน
 * Arduino UNO R4
 <img src="Pics/Arduino.jpg" alt="Arduino UNO R4" width="300"/>
+
 * LCD
 <img src="Pics/LCD-Display-with-I2C-Module.jpg" alt="LCD" width="300"/>
+
 * Button
 <img src="Pics/Button.jpg" alt="Button" width="300"/>
+
 * Jumper Wires
 <img src="Pics/JumperWires.jpg" alt="Jumper Wires" width="300"/>
+
 * Breadboard
 <img src="Pics/Breadboard.jpg" alt="Breadboard" width="300"/>
 
