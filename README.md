@@ -29,7 +29,7 @@ Project นี้เป็นการบูรณาการในการใ
 https://ayyaya21.github.io/FlappyChick/
 
 # Demo Video
-
+https://youtu.be/Lm3SDXRO8W0
 
 # Member
 * 66070156 นายภานุพงษ์ ฝ่อกระโทก
