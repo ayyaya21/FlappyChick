@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/styles.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        content: ["./*.{html,js}", "./src/**/*.{html,js}"],
+        theme: {
+          extend: {
+            fontFamily: {
+              flappy: ["FlappyBirdy", "sans-serif"],
+              amd: ["AMD", "sans-serif"],
+              osd: ["OSD", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <title>Flappy Chick</title>
+    <link rel="icon" href="/img/logo.png" />
+  </head>
+  <style>
+    * {
+      scroll-behavior: smooth;
+    }
+    #home {
+      background-image: url("/img/background.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      margin: 0;
+    }
+    #picbox {
+      flex: 7;
+      overflow-y: auto;
+      max-height: 500px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      border-radius: 30px;
+    }
+  </style>
+  <body class="font-flappy w-full h-dvh relative min-h-screen">
+    <!-- Navbar -->
+    <nav
+      class="navbar fixed top-0 w-full bg-gray-100 shadow p-3 flex items-center font-osd z-50"
+    >
+      <a href="#home" class="text-4xl font-bold text-gray-800">FLAPPY CHICK</a>
+      <button class="navbar-toggler ml-auto text-gray-500" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="hidden md:flex space-x-4 ml-auto">
+        <a href="#about" class="text-gray-800 hover:text-[#ffb420] text-xl"
+          >About</a
+        >
+        <a href="#code" class="text-gray-800 hover:text-[#ffb420] text-xl"
+          >Source Code</a
+        >
+        <a href="#demo" class="text-gray-800 hover:text-[#ffb420] text-xl"
+          >Video Demo</a
+        >
+        <a href="#member" class="text-gray-800 hover:text-[#ffb420] text-xl"
+          >Member</a
+        >
+      </div>
+      <a
+        href="https://github.com/ayyaya21/FlappyChick"
+        class="ml-4 text-2xl text-dark"
+      >
+      </a>
+    </nav>
+
+    <!-- Banner Section -->
+    <div class="hero min-h-screen" id="home">
+      <div class="hero-content flex-col lg:flex-row-reverse">
+        <img src="/img/board.jpeg" class="max-w-96 rounded-lg shadow-2xl" />
+        <div>
+          <h1 class="text-9xl font-bold text-gray-950">Flappy Chick</h1>
+          <p class="py-6 text-4xl text-gray-700">
+            Flappy Chick is an Arduino-based game where a chicken navigates
+            through obstacles, displayed on an LCD and controlled with a push
+            button.
+          </p>
+          <a href="#about">
+            <button
+              class="relative bg-slate-50 inline-flex items-center justify-center px-10 py-2.5 overflow-hidden font-medium text-[#ffb420] transition duration-300 ease-out border-2 border-[#ffb420] rounded-lg shadow-md group"
+            >
+              <span
+                class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#ffb420] group-hover:translate-x-0 ease"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </span>
+              <span
+                class="absolute flex items-center text-3xl font-semibold justify-center w-full h-full text-[#ffb420] transition-all duration-300 transform group-hover:translate-x-full ease"
+                >Show More</span
+              >
+              <span class="relative text-base font-semibold invisible"
+                >Show More</span
+              >
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- About Section -->
+    <div id="about" class="bg-gray-100 py-20">
+      <div class="container mx-auto flex flex-wrap items-center">
+        <div class="w-full md:w-1/2">
+          <img src="img/board.jpeg" class="rounded-lg shadow-lg" />
+        </div>
+        <div class="w-full md:w-1/2 mt-8 md:mt-0 text-left p-8">
+          <h1 class="text-7xl text-gray-800 font-bold font-amd">
+            รายละเอียดโครงงาน
+          </h1>
+          <p class="text-3xl font-amd">
+            Project นี้เป็นการบูรณาการในการใช้งาน Microcontroller ในรายวิชา
+            PHYSICAL COMPUTING โดยเป็นการทำเป็นเกมที่สนุกและโต้ตอบได้
+            โดยผู้เล่นจะควบคุมไก่เพื่อให้บินผ่านสิ่งกีดขวางที่ปรากฏบนหน้าจอที่เลื่อนอย่างต่อเนื่อง
+            โดยเกมนี้ได้รับแรงบันดาลใจจากเกม Flappy Bird
+            และมีความพิเศษที่ใช้ตัวละครเป็นไก่แทน นอกจากนี้
+            เกมนี้สร้างขึ้นทั้งหมดโดยใช้อุปกรณ์ฮาร์ดแวร์ของ Arduino
+            ผู้เล่นจะต้องกะจังหวะการเคลื่อนไหวให้แม่นยำเพื่อหลีกเลี่ยงการชนกับสิ่งกีดขวางและทำคะแนนสูงสุด
+          </p>
+          <h1 class="text-7xl text-gray-800 font-bold font-amd">
+            ฟังก์ชันหลัก
+          </h1>
+          <p class="text-3xl font-amd">
+            * ระบบควบคุมการกระโดดของไก่และการเคลื่อนที่ของท่อ
+            โดยไก่จะกระโดดเมื่อกดปุ่ม และถูกแรงโน้มถ่วงดึงลงเมื่อไม่ได้กดปุ่ม
+            <br />
+            * ระบบตรวจสอบการชนกับท่อหรือขอบหน้าจอ หากเกิดการชนจะสิ้นสุดเกมทันที
+            <br />
+            * ระบบแสดงคะแนนเมื่อไก่ผ่านท่อสำเร็จ สามารถแสดงผลคะแนนบนหน้าจอ LCD
+            ให้ผู้เล่นเห็นตลอดการเล่น
+          </p>
+          <a href="https://github.com/ayyaya21/FlappyChick">
+            <button
+              class="relative inline-flex items-center justify-center px-10 py-1 overflow-hidden font-medium text-[#ffb420] transition duration-300 ease-out border-2 border-[#ffb420] rounded-lg shadow-md group mt-5"
+            >
+              <span
+                class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#ffb420] group-hover:translate-x-0 ease"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </span>
+              <span
+                class="absolute flex items-center text-3xl font-semibold justify-center w-full h-full text-[#ffb420] transition-all duration-300 transform group-hover:translate-x-full ease"
+                >Source Code</span
+              >
+              <span class="relative text-base font-semibold invisible"
+                >Source Code</span
+              >
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- อุปกรณ์ Section -->
+    <div class="bg-gray-100 pt-10 pb-20" id="tools">
+      <div class="container flex flex-col items-center mx-auto text-center">
+        <h2 class="text-7xl font-semibold text-[#3cb3d4] font-amd">อุปกรณ์</h2>
+        <p class="text-6xl mt-4 font-amd">
+          อุปกรณ์หลักที่ใช้ในการทำโปรเจคชิ้นงานนี้
+        </p>
+        <div class="grid grid-cols-2 place-items-center mt-10 gap-10 w-fit">
+          <div class="card card-compact w-96 h-full shadow-xl">
+            <figure>
+              <img
+                class="h-72 object-cover"
+                src="/img/Arduino R4 WiFi Front.webp"
+                alt="Arduino"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title text-3xl font-osd font-semibold">
+                Arduino R4 WiFi
+              </h2>
+            </div>
+          </div>
+          <div class="card card-compact w-96 shadow-xl">
+            <figure class="bg-white">
+              <img class="h-72 object-cover" src="/img/LCD.jpg" alt="LCD" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title text-3xl font-osd font-semibold">
+                LCD Display (with I2C Module)
+              </h2>
+            </div>
+          </div>
+          <div class="card card-compact w-96 shadow-xl">
+            <figure class="bg-white">
+              <img
+                class="h-72 object-cover"
+                src="/img/pushbutton.jpeg"
+                alt="pushbutton"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title text-3xl font-osd font-semibold">
+                Push Button
+              </h2>
+            </div>
+          </div>
+          <div class="card card-compact w-96 shadow-xl">
+            <figure>
+              <img
+                class="h-72 object-cover"
+                src="/img/wires.webp"
+                alt="wires"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title text-3xl font-osd font-semibold">
+                Jumper Wires
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Source Code Section -->
+    <div id="code" class="bg-[#3cb3d4] text-white py-20">
+      <div class="container mx-auto flex flex-wrap items-center">
+        <div class="w-full md:w-1/2">
+          <h1 class="text-8xl text-white font-bold uppercase">
+            Flappy Chick Project
+          </h1>
+          <h2 class="text-7xl uppercase">Source Code</h2>
+          <a href="#about">
+            <button
+              class="relative bg-white font-osd font-bold inline-flex items-center justify-center px-10 py-2.5 overflow-hidden text-[#ffb420] transition duration-300 ease-out border-2 border-[#ffb420] rounded-lg shadow-md group"
+            >
+              <span
+                class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#ffb420] group-hover:translate-x-0 ease"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </span>
+              <span
+                class="absolute flex items-center text-3xl font-semibold justify-center w-full h-full text-[#ffb420] transition-all duration-300 transform group-hover:translate-x-full ease"
+                >GitHub</span
+              >
+              <span class="relative text-base font-semibold invisible"
+                >GitHub</span
+              >
+            </button>
+          </a>
+        </div>
+        <div class="w-3/4 md:w-1/2 mt-8 md:mt-0 overflow-y-auto" id="picbox">
+          <img
+            src="img/code.png"
+            alt="Source Code"
+            class="rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Demo Section -->
+    <div id="demo" class="bg-gray-100 py-20 text-center">
+      <h2 class="text-8xl font-bold text-yellow-400 font-flappy uppercase">
+        Project Demo Video
+      </h2>
+      <p class="text-5xl mt-4 font-amd">
+        คลิปวิดีโอสาธิตการทำงานของ Arduino Project Flappy Chick
+      </p>
+      <div class="mt-12">
+        <iframe
+          width="720"
+          height="425"
+          src="https://www.youtube.com/embed/Lm3SDXRO8W0?si=jDzpVJQrY0RM13q6"
+          class="mx-auto rounded-lg shadow-lg"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Member Section -->
+    <div id="member" class="bg-[#3cb3d4] text-white py-20 text-center font-amd">
+      <h2 class="text-8xl font-bold text-yellow-400 font-flappy uppercase">
+        Member
+      </h2>
+      <p class="text-6xl mt-4">สมาชิกของโปรเจคนี้</p>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center gap-8 mt-10 w-fit mx-auto"
+      >
+        <div class="p-4 flex flex-col items-center text-center">
+          <img
+            src="img/ohm.jpg"
+            class="w-60 h-80 rounded-lg shadow-lg object-cover"
+          />
+          <p class="text-5xl mt-4">นายภานุพงษ์ ฝ่อกระโทก<br />66070156</p>
+        </div>
+        <div class="p-4 flex flex-col items-center text-center">
+          <img
+            src="img/phu.jpeg"
+            class="w-60 h-80 rounded-lg shadow-lg object-cover"
+          />
+          <p class="text-5xl mt-4">นายภูฟ้า มันทรานนท์<br />66070161</p>
+        </div>
+        <div class="p-4 flex flex-col items-center text-center">
+          <img
+            src="img/bass.JPG"
+            class="w-60 h-80 rounded-lg shadow-lg object-cover"
+          />
+          <p class="text-5xl mt-4">นายสิวะภัทร์ สมานตระกูลชัย<br />66070207</p>
+        </div>
+        <div class="p-4 flex flex-col items-center text-center">
+          <img
+            src="img/yaya.jpg"
+            class="w-60 h-80 rounded-lg shadow-lg object-cover"
+          />
+          <p class="text-5xl mt-4">นางสาวอลิสรา ตั่นเล่ง<br />66070221</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 text-center py-4 font-osd">
+      <p>
+        © 2024 Copyright:
+        <a href="https://github.com/ayyaya21/FlappyChick" class="text-[#3cb3d4]"
+          >GitHub Project</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
